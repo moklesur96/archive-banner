@@ -1,0 +1,252 @@
+<!-- Banner popup code Start -->
+<!-- +-----------------------------------------------------------------+
+|Add to all html pages right before the closing body tag (</body>)|
++-----------------------------------------------------------------+ -->
+
+<!-- Where the snippet begins-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Inter:wght@400&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+<script>
+    function showDivAfterDelay() {
+        setTimeout(function () {
+            var currentDomainName = window.location.hostname.replace('www.', '');
+            var domainDivToChange = document.getElementById("domain");
+            domainDivToChange.innerHTML = currentDomainName;
+            var divToChange = document.getElementById("overlay");
+            divToChange.style.visibility = "visible";
+            divToChange.style.opacity = "1";
+        }, 3000);
+    }
+    window.onload = showDivAfterDelay;
+    function handleClose() {
+        setTimeout(function () {
+            var divToChange = document.getElementById("overlay");
+            var divToChange2 = document.getElementById("cta");
+            divToChange.style.visibility = "hidden";
+            divToChange.style.opacity = "0";
+            divToChange2.style.visibility = "hidden";
+            divToChange2.style.opacity = "0";
+            divToChange2.style.zIndex = "-100"
+        }, 5);
+    }
+
+    function handleGoTo() {
+        const currentDomainName = window.location.hostname.replace('www.', '');
+        window.open("https://dash.serpnames.com/domain/" + currentDomainName)
+    }
+</script>
+<style>
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        margin: auto 0;
+        background: linear-gradient(101.28deg, #3254D0 0.03%, #25325E 100%);
+        z-index: 99999 !important;
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all 0.5s ease-in-out;
+    }
+
+    #domain {
+        padding-bottom: 8px;
+    }
+
+    #slogan {
+        clamp(22px, calc(1.375rem + ((1vw - 3.75px) * 1.6828)), 48px);
+        padding-top: 4px;
+    }
+
+    #pattern {
+        position: absolute;
+        top: 0;
+        z-index: 41;
+    }
+
+    #close-circle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 55;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .f-link {
+        color: #fff;
+    }
+
+    #close-circle:hover {
+        top: 5px;
+    }
+
+    #wrapper-SerpNames {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        z-index: 50;
+        height: 100vh;
+    }
+
+    #content-SerpNames {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin-top: 80px;
+
+        max-width: 727px;
+    }
+
+    #sub-text-SerpNames {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 40px;
+
+        display: flex;
+        text-align: center;
+        letter-spacing: 4px;
+
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.96;
+    }
+
+    #header-SerpNames {
+        width: 100%;
+
+        font-family: 'Fraunces';
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(26px, calc(1.625rem + ((1vw - 3.75px) * 2.8479)), 70px);
+        line-height: 1.4;
+        margin-top: 64px;
+        margin-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.96;
+        justify-content: center;
+    }
+
+    #body-SerpNames {
+        width: 100%;
+        margin-bottom: 30px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+
+        text-align: center;
+
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.96;
+    }
+
+    .cta {
+        box-sizing: border-box;
+        padding: 13px 20px;
+        visibility: visible;
+
+        /* width: 215px; */
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+
+        background-color: #FFFFFF;
+        color: #3254D0;
+        border: 2px solid #FFFFFF;
+        border-radius: 5px;
+
+        z-index: 55;
+
+        transition: all 0.3s ease-in-out;
+    }
+
+    .cta:hover {
+        background-color: #67676739;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    #footer-SerpNames {
+        margin-top: 60px;
+        width: 100vw;
+        min-height: 46px;
+        color: #FFFFFF;
+        background: #25315B;
+        text-align: center;
+        z-index: 48;
+    }
+
+    #footer-text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 9px 10px 9px 10px;
+    }
+
+</style>
+<div id="overlay">
+    <img src="https://serpnames.com/wp-content/uploads/2023/10/background-pattern.png" alt="bg pattern" id="pattern">
+    <img src="https://serpnames.com/wp-content/uploads/2023/10/closs-icon.png" alt="close-circle" id="close-circle"
+        onclick=handleClose() width="44px">
+    <div id="wrapper-SerpNames">
+        <div id="content-SerpNames">
+            <div id="logo"><img src="https://serpnames.com/wp-content/uploads/2023/09/Logo-White.svg" alt="logo"
+                    width="203px">
+            </div>
+            <!-- <div id="sub-text-SerpNames">EXPIRED DOMAIN AT ITS BEST</div> -->
+            <div id="header-SerpNames">
+                <div style="display: inline">
+                    <div id="domain" style="border-bottom: 2px solid white; margin-top: 20px;">abc.com</div>
+                    <div id="slogan">domain name is for sale</div>
+                </div>
+            </div>
+            <div id="body-SerpNames">This website is inactive. Its old content has been restored to preserve the site’s
+                SEO value (like backlinks from authority websites).</div>
+            <div id="body-SerpNames">This is important for expired domain investors because that SEO value can help you
+                rank high on Google within weeks or even days, instead of months or years.</div>
+            <div class="cta" id="cta" onclick=handleGoTo()>
+                <span>
+                    Click here to purchase the domain
+                </span>
+            </div>
+        </div>
+        <div id="footer-SerpNames">
+            <div id="footer-text">
+                For content removal or inquiries, email us at <b><a class="f-link"
+                        href="mailto:team@serpnames.com">team@serpnames.com</a></b>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Where the snippet ends-->
+
+<!-- Banner Popup code end -->
